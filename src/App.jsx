@@ -1,8 +1,7 @@
-import { useState } from 'react'
-
-import initialEmails from './data/emails'
-
-import './styles/App.css'
+import React, { useState } from 'react';
+import initialEmails from './data/emails';
+import './styles/App.css';
+import Emails from './Emails';
 
 const getReadEmails = emails => emails.filter(email => !email.read)
 
@@ -116,6 +115,11 @@ function App() {
           ))}
         </ul>
       </main>
+      <Emails
+      emails={filteredEmails}
+      toggleStar={toggleStar}
+      toggleRead={toggleRead}
+    />
     </div>
   )
 }
